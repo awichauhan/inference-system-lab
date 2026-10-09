@@ -1,0 +1,11 @@
+{
+  "name": "arrival-10rps",
+  "base_url": "http://127.0.0.1:8000",
+  "workload": "fixed",
+  "total_requests": 100,
+  "prompt_tokens": 128,
+  "output_tokens": 32,
+  "concurrency": 16,
+  "arrival_rate": 10,
+  "seed": 42
+}

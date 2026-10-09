@@ -1,0 +1,11 @@
+{
+  "name": "prompt-512",
+  "base_url": "http://127.0.0.1:8000",
+  "workload": "fixed",
+  "total_requests": 50,
+  "prompt_tokens": 512,
+  "output_tokens": 32,
+  "concurrency": 8,
+  "arrival_rate": null,
+  "seed": 42
+}
