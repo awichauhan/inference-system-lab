@@ -580,41 +580,6 @@ This provides a useful sanity check that the benchmark instrumentation is measur
 
 ---
 
-# Python Concepts Used
-
-| Concept | Where It Appears |
-|---|---|
-| Modules and packages | `benchmark`, `mock_server`, `tests` |
-| Dataclasses | `RequestSpec`, `RequestResult`, `BenchmarkSummary` |
-| Type hints | request/result definitions |
-| Properties | TTFT, TPOT, ITL, E2E calculations |
-| `async def` / `await` | server and client |
-| Coroutines | HTTP requests |
-| Async tasks | concurrent request execution |
-| Async iteration | streamed token reading |
-| Async generators | mock token generation |
-| Async context managers | HTTP streaming lifecycle |
-| Semaphore | bounded concurrency |
-| Exception handling | per-request failure capture |
-| `time.perf_counter()` | latency measurement |
-| JSON | experiment configuration |
-| CSV | result persistence |
-| Random seed | reproducible mixed workload |
-| pytest | metric validation |
-
----
-
-# DSA and Algorithm Concepts Used
-
-| Concept | Usage |
-|---|---|
-| Dynamic arrays / lists | requests, results, token timestamps |
-| Queueing concept | requests waiting for semaphore capacity |
-| Linear scan | metric aggregation |
-| Sorting | percentile calculation |
-| Dictionary / hash-map lookup | parsed JSON configuration |
-| State modelling | request/result dataclasses |
-| Sequential timestamp differences | ITL calculation |
 
 Relevant complexities:
 
@@ -790,40 +755,3 @@ unit-tested metric calculations
 The benchmark client and measurement concepts established here can now be reused against a real inference engine.
 
 ---
-
-# Next — Lab 1
-
-Lab 1 replaces:
-
-```text
-Benchmark Harness
-        ↓
-Mock FastAPI Server
-```
-
-with:
-
-```text
-Benchmark Harness
-        ↓
-Real Inference Runtime
-        ↓
-LLM
-        ↓
-NVIDIA GPU
-```
-
-The major new topics will include:
-
-```text
-real model serving
-GPU utilization
-real prefill/decode behavior
-throughput saturation
-real latency/throughput trade-offs
-vLLM
-KV-cache behavior
-GPU memory constraints
-```
-
-The benchmark harness created in Lab 0 becomes the measuring instrument for those experiments.
