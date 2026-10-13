@@ -1,0 +1,9 @@
+{
+  "base_url": "http://127.0.0.1:8000",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "prompt": "Explain what GPU inference means in simple terms.",
+  "total_requests": 4,
+  "max_tokens": 32,
+  "concurrency": 2,
+  "arrival_rate": null
+}
